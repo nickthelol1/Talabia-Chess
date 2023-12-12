@@ -28,7 +28,7 @@ public class ChessboardGUI extends JFrame {
                 add(squares[i][j]);
             }
         }
-//test
+
         // Set a preferred size for the JFrame
         setPreferredSize(new Dimension(800, 600));
 
