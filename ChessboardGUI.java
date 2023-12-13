@@ -40,8 +40,8 @@ public class ChessboardGUI extends JFrame {
     
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new ChessboardGUI();
-        });
+    
+        new ChessboardGUI();
+        
     }
 }
