@@ -24,24 +24,21 @@ public class ChessboardGUI extends JFrame {
                 squares[i][j].setOpaque(true);
                 squares[i][j].setBackground(Color.WHITE);
                 squares[i][j].setBorder(BorderFactory.createLineBorder(new Color(0, 0, 128), 3));
-
                 add(squares[i][j]);
             }
         }
 
         // Set a preferred size for the JFrame
         setPreferredSize(new Dimension(800, 600));
+    }
 
+    public void start() {
         pack(); // Adjusts the JFrame size to fit the components
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
+
     
 
-    public static void main(String[] args) {
-    
-        new ChessboardGUI();
-        
-    }
 }
