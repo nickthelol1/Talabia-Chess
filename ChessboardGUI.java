@@ -3,18 +3,17 @@ import java.awt.*;
 
 public class ChessboardGUI extends JFrame {
 
-    private static final int ROWS = 7;
-    private static final int COLS = 6;
+    private static final int ROWS = 6;
+    private static final int COLS = 7;
     private JButton[][] squares;
 
     public ChessboardGUI() {
         initializeUI();
-       
     }
 
     private void initializeUI() {
         setTitle("Chessboard");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Add this line to set the default close operation
         setLayout(new GridLayout(ROWS, COLS));
         squares = new JButton[ROWS][COLS];
 
@@ -38,7 +37,25 @@ public class ChessboardGUI extends JFrame {
         setVisible(true);
     }
 
+    public void updateChessboard(Chessboard chessboard) {
+        for (int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                ChessPiece piece = chessboard.getPieceAt(i, j);
+                if (piece != null) {
+                    squares[i][j].setIcon(piece.getImage());
+                } else {
+                    squares[i][j].setIcon(null);
+                }
+            }
+        }
+    }
 
-    
-
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            ChessboardGUI chessboardGUI = new ChessboardGUI();
+            Chessboard chessboard = new Chessboard(); // Create a Chessboard instance
+            chessboardGUI.updateChessboard(chessboard); // Update the GUI with the initial state
+            chessboardGUI.start();
+        });
+    }
 }
