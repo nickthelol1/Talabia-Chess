@@ -13,7 +13,7 @@ public class ChessboardGUI extends JFrame {
 
     private void initializeUI() {
         setTitle("Chessboard");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  // Add this line to set the default close operation
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
         setLayout(new GridLayout(ROWS, COLS));
         squares = new JButton[ROWS][COLS];
 
