@@ -13,7 +13,7 @@ public class ChessboardGUI extends JFrame {
 
     private void initializeUI() {
         setTitle("Chessboard");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(ROWS, COLS));
         squares = new JButton[ROWS][COLS];
 
@@ -27,12 +27,11 @@ public class ChessboardGUI extends JFrame {
             }
         }
 
-        // Set a preferred size for the JFrame
         setPreferredSize(new Dimension(800, 600));
     }
 
     public void start() {
-        pack(); // Adjusts the JFrame size to fit the components
+        pack();
         setLocationRelativeTo(null);
         setVisible(true);
     }
@@ -48,14 +47,5 @@ public class ChessboardGUI extends JFrame {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            ChessboardGUI chessboardGUI = new ChessboardGUI();
-            Chessboard chessboard = new Chessboard(); // Create a Chessboard instance
-            chessboardGUI.updateChessboard(chessboard); // Update the GUI with the initial state
-            chessboardGUI.start();
-        });
     }
 }

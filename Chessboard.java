@@ -3,7 +3,7 @@ public class Chessboard {
     private ChessPiece[][] pieces;
 
     public Chessboard() {
-        pieces = new ChessPiece[6][7];  
+        pieces = new ChessPiece[6][7];
         initializeBoard();
     }
 
